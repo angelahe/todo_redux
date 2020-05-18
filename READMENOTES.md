@@ -18,7 +18,7 @@ https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selecto
 npx create-react-app todo_redux
 npm i redux --save-dev
 npm i react-redux --save-dev
-
+npm install classnames --save-dev
 ```
 
 ## app created in this tutorial:
