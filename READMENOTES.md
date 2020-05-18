@@ -59,3 +59,51 @@ Selectors
     - getTodoById finds the todo in the store given by id
     - getTodos is slightly more complex. It takes all the ids from allIds, finds each todo in byIds, and returns the final array of todos
     - getTodosByVisibilityFilter filters the todos according to the visibility filter
+
+## common ways of calling connect
+not injecting action creators:
+1.    connect()(Component)            - does not subscribe to the store
+2.    connect(mapStateToProps)        - subscribe to the store
+inject action creators:
+3.    connect(null, mapDispatchToProps)(Component)            - does not subscribe to the store
+4.    connect(mapStateToProps, mapDispatchToProps)(Component) - subscribe to the store
+
+e.g.
+1.
+// ... Component
+export default connect()(Component) // Component will receive `dispatch` (just like our <TodoList />!)
+
+2.
+// ... Component
+const mapStateToProps = state => state.partOfState
+export default connect(mapStateToProps)(Component)
+
+3.
+import { addTodo } from './actionCreators'
+// ... Component
+export default connect(
+  null,
+  { addTodo }
+)(Component)
+
+4.
+import * as actionCreators from './actionCreators'
+// ... Component
+const mapStateToProps = state => state.partOfState
+export default connect(
+  mapStateToProps,
+  actionCreators
+)(Component)
+
+what they do:
+1.  not re-render when the store changes
+    receive props.dispatch that you may use to manually dispatch action
+
+2.  subscribe to the values that mapStateToProps extracts from the store, and re-render only when those values have changed
+    receive props.dispatch that you may use to manually dispatch action
+
+3.  not re-render when the store changes
+    receive each of the action creators you inject with mapDispatchToProps as props and automatically dispatch the actions upon being called
+
+4.  subscribe to the values that mapStateToProps extracts from the store, and re-render only when those values have changed
+    receive all of the action creators you inject with mapDispatchToProps as props and automatically dispatch the actions upon being called.
