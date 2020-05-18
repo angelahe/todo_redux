@@ -10,6 +10,8 @@ https://egghead.io/series/getting-started-with-redux
 https://redux.js.org/introduction/learning-resources
 https://github.com/tayiorbeii/egghead.io_redux_course_notes
 http://devguides.io/redux/
+the how and when to use selectors:
+https://blog.isquaredsoftware.com/2017/12/idiomatic-redux-using-reselect-selectors/
 
 ## setup
 ```
