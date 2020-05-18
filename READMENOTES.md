@@ -5,6 +5,19 @@ https://react-redux.js.org/introduction/basic-tutorial
 additional reading:
 https://redux-toolkit.js.org/
 https://redux.js.org/
+https://redux.js.org/recipes/configuring-your-store/
+https://egghead.io/series/getting-started-with-redux
+https://redux.js.org/introduction/learning-resources
+https://github.com/tayiorbeii/egghead.io_redux_course_notes
+http://devguides.io/redux/
+
+## setup
+```
+npx create-react-app todo_redux
+npm i redux --save-dev
+npm i react-redux --save-dev
+
+```
 
 ## app created in this tutorial:
 
